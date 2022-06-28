@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  #repository: rundeck/rundeck
-  repository: epontech.local:8082/artifactory/helm-virtual/rundeck
+  #repository: rundeck/rundeck #public repo
+  repository: epontech.local:8082/artifactory/helm-virtual/rundeck 
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: 4.3.1
