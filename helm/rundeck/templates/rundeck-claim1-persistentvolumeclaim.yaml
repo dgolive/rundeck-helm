@@ -5,6 +5,7 @@ metadata:
   labels:
     io.kompose.service: rundeck-claim1
   name: rundeck-claim1
+  namespace: rundeck
 spec:
   accessModes:
     - ReadWriteOnce

@@ -3,6 +3,7 @@ apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "rundeck-1.fullname" . }}
+  namespace: rundeck
   labels:
     {{- include "rundeck-1.labels" . | nindent 4 }}
 spec:
