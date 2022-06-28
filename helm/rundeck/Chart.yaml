@@ -23,7 +23,7 @@ version: 0.2.0
 # It is recommended to use it with quotes.
 appVersion: "4.3.1"   #rundeck/rundeck:4.3.1
 
-dependencies:
-  - name: rundeck
-    version: 4.3.1
-    repository: http://epontech.local:8082/artifactory/helm-virtual/
+#dependencies:
+#  - name: rundeck
+#    version: 4.3.1
+#    repository: http://epontech.local:8082/artifactory/helm-virtual/
