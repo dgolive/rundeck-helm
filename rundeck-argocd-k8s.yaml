@@ -18,10 +18,7 @@ spec:
     path: helm/rundeck
     helm:
       releaseName: rundeck
-      #parameters:
-      #- name: clusterName
-      #  value: rundeck
   destination:
     server: https://kubernetes.default.svc
-    #namespace: rundeck
+    namespace: rundeck
  
