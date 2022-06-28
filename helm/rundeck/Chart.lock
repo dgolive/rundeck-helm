@@ -1,0 +1,6 @@
+dependencies:
+- name: rundeck
+  repository: http://epontech.local:8082/artifactory/helm-virtual/
+  version: 0.2.0
+digest: sha256:177a43ede096bde206e21de9b4194b2221ad96addf2dc1850096b693e03dc48a
+generated: "2022-06-28T18:51:25.963662008-03:00"
