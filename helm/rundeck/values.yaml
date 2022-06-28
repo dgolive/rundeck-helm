@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   #repository: rundeck/rundeck #public repo
-  repository: epontech.local:8082/artifactory/helm-virtual/rundeck
+  repository: localhost:8082/docker-quickstart/rundeck-dev
   #repository: rundeck
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
