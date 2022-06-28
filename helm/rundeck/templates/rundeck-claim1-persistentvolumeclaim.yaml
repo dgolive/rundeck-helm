@@ -1,4 +1,16 @@
 apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-rundeck-data
+spec:
+  capacity:
+    storage: 100Mi
+  accessModes:
+  - ReadWriteOnce
+  hostPath:
+    path: "/app/rundeck-data"
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
