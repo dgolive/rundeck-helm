@@ -43,7 +43,7 @@ spec:
               path: /
               port: 4440
               scheme: HTTP
-            initialDelaySeconds: 500
+            initialDelaySeconds: 150
             periodSeconds: 120
             successThreshold: 1
             timeoutSeconds: 5
@@ -52,8 +52,8 @@ spec:
               path: /
               port: 4440
               scheme: HTTP
-            initialDelaySeconds: 400
-            periodSeconds: 120
+            initialDelaySeconds: 120
+            periodSeconds: 30
             successThreshold: 1
             timeoutSeconds: 5
           volumeMounts:
