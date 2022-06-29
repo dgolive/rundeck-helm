@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-rundeck
+  name: pv-data
 spec:
   capacity:
     storage: 100Mi
@@ -9,21 +9,17 @@ spec:
   - ReadWriteOnce
   hostPath:
     path: "/app/data"
+  claimRef:
+    name: data
 
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  creationTimestamp: null
-  labels:
-    io.kompose.service: data
   name: data
-  namespace: rundeck
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 100Mi
-status: {}
-

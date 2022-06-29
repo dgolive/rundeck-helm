@@ -41,15 +41,19 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: 4440
-            initialDelaySeconds: 50
-            periodSeconds: 60
+              port: 80
+            initialDelaySeconds: 500
+            periodSeconds: 120
+            successThreshold: 1
+            timeoutSeconds: 5
           readinessProbe:
             httpGet:
               path: /
-              port: 4440
+              port: 80
             initialDelaySeconds: 10
-            periodSeconds: 60
+            periodSeconds: 5
+            successThreshold: 1
+            timeoutSeconds: 5
           volumeMounts:
             - mountPath: /home/rundeck/server/data
               name: data
