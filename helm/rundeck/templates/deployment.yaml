@@ -46,16 +46,16 @@ spec:
             initialDelaySeconds: 500
             periodSeconds: 120
             successThreshold: 1
-            timeoutSeconds: 60
+            timeoutSeconds: 5
           readinessProbe:
             httpGet:
               path: /
               port: 4440
               scheme: HTTP
-            initialDelaySeconds: 10
-            periodSeconds: 5
+            initialDelaySeconds: 400
+            periodSeconds: 120
             successThreshold: 1
-            timeoutSeconds: 45
+            timeoutSeconds: 5
           volumeMounts:
             - mountPath: /home/rundeck/server/data
               name: data
