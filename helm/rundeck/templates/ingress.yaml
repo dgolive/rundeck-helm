@@ -16,8 +16,9 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
-  labels:
-    traffic-type: external
+  namespace: rundeck
+  #labels:
+  #  traffic-type: external
     {{- include "rundeck.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
