@@ -5,12 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: rundeck/rundeck #public repo
-  #repository: localhost:8082/docker-quickstart/rundeck-dev
-  #repository: rundeck
+  repository: rundeck/rundeck
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 4.3.1
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
@@ -46,31 +44,30 @@ service:
 ingress:
   enabled: false
   className: ""
-  annotations: 
-    # kubernetes.io/ingress.class: nginx-internal
-    kubernetes.io/ingress.class: nginx
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: epontech.local
-      paths: 
-      - path: /
-        pathType: Prefix
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
 
-resources: 
+resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  limits:
-    cpu: 200m
-    memory: 256Mi
-  requests:
-    cpu: 100m
-    memory: 128Mi
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
 
 autoscaling:
   enabled: false
