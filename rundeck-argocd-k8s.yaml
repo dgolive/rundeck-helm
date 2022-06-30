@@ -7,14 +7,14 @@ metadata:
     Product: DevOps
     ProductComponents: ArgoApplicationSet
     Region: br
-    Environment: dev
+    Environment: main
     kind: helm
     type: declarative
 spec:
   project: default
   source:
     repoURL: https://github.com/dgolive/rundeck-helm.git
-    targetRevision: HEAD
+    targetRevision: main
     path: helm/rundeck
     helm:
       releaseName: rundeck
