@@ -38,24 +38,24 @@ spec:
             - name: http
               containerPort: 4440
               protocol: TCP
-          #livenessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: 4440
-          #    scheme: HTTP
-          #  initialDelaySeconds: 150
-          #  periodSeconds: 120
-          #  successThreshold: 1
-          #  timeoutSeconds: 5
-          #readinessProbe:
-          #  httpGet:
-          #    path: /
-          #    port: 4440
-          #    scheme: HTTP
-          #  initialDelaySeconds: 120
-          #  periodSeconds: 30
-          #  successThreshold: 1
-          #  timeoutSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 4440
+              scheme: HTTP
+            initialDelaySeconds: 150
+            periodSeconds: 120
+            successThreshold: 1
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 4440
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 5
           volumeMounts:
             - mountPath: /home/rundeck/server/data
               name: data
