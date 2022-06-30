@@ -17,9 +17,9 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   namespace: rundeck
-  #labels:
+  labels:
   #  traffic-type: external
-   # {{- include "rundeck.labels" . | nindent 4 }}
+    {{- include "rundeck.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
