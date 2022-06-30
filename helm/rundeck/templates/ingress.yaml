@@ -18,7 +18,6 @@ metadata:
   name: {{ $fullName }}
   namespace: rundeck
   labels:
-  #  traffic-type: external
     {{- include "rundeck-1.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
