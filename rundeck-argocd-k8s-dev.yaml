@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: rundeck
+  name: rundeck-dev
   namespace: argocd
   labels:
     Product: DevOps
