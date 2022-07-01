@@ -44,15 +44,15 @@ service:
 
 ingress:
   enabled: true
-  #className: "nginx"
+  className: "nginx"
   annotations: 
-    #nginx.ingress.kubernetes.io/rewrite-target: /
-    #nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
   hosts:
-    - host: a8274a4578cba4c329b072f7a6503f8d-1598153712.us-east-2.elb.amazonaws.com
+    - host: rundeck.aws.com
       paths:
         - path: /
-          pathType: ImplementationSpecific
+          pathType: Prefix
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
