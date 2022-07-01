@@ -38,12 +38,12 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 4440
   targetPort: 4440
 
 ingress:
-  enabled: true
+  enabled: false
   className: "nginx"
   annotations: 
     nginx.ingress.kubernetes.io/rewrite-target: /
