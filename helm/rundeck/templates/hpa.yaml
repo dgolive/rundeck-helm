@@ -2,15 +2,15 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "rundeck-1.fullname" . }}
+  name: {{ include "rundeck.fullname" . }}
   namespace: rundeck
   labels:
-    {{- include "rundeck-1.labels" . | nindent 4 }}
+    {{- include "rundeck.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "rundeck-1.fullname" . }}
+    name: {{ include "rundeck.fullname" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

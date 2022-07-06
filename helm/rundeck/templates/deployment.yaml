@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "rundeck-1.fullname" . }}
+  name: {{ include "rundeck.fullname" . }}
   namespace: {{ .Values.namespace }}
   labels:
-    {{- include "rundeck-1.labels" . | nindent 4 }}
+    {{- include "rundeck.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "rundeck-1.selectorLabels" . | nindent 6 }}
+      {{- include "rundeck.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -19,19 +19,19 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "rundeck-1.selectorLabels" . | nindent 8 }}
+        {{- include "rundeck.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "rundeck-1.serviceAccountName" . }}
+      serviceAccountName: {{ include "rundeck.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - env:
-            - name: RUNDECK_GRAILS_URL
-              value: http://localhost:8045
+            #- name: RUNDECK_GRAILS_URL
+            #  value: http://localhost:8045
             - name: RUNDECK_SERVER_FORWARDED
               value: "true"
             - name: RUNDECK_LOGGING_STRATEGY
