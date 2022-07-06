@@ -30,8 +30,6 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
       - env:
-        - name: RUNDECK_GRAILS_URL
-          value: https://rundeck.us.dev.kube.intapp.com
         - name: RUNDECK_SERVER_FORWARDED
           value: "true"
         - name: RUNDECK_LOGGING_STRATEGY
