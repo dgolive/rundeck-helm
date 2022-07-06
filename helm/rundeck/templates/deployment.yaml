@@ -29,12 +29,12 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-      - env:
-        - name: RUNDECK_SERVER_FORWARDED
-          value: "true"
-        - name: RUNDECK_LOGGING_STRATEGY
-          value: CONSOLE        
-        - name: {{ .Chart.Name }}
+        - env:
+            - name: RUNDECK_SERVER_FORWARDED
+              value: "true"
+            - name: RUNDECK_LOGGING_STRATEGY
+              value: CONSOLE        
+          name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
