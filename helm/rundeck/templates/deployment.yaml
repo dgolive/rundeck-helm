@@ -30,8 +30,8 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - env:
-            #- name: RUNDECK_GRAILS_URL
-            #  value: http://localhost:8045
+            #- name: RUNDECK_GRAILS_URL   ## to another ip:port
+            #  value: http://localhost:4440
             - name: RUNDECK_SERVER_FORWARDED
               value: "true"
             - name: RUNDECK_LOGGING_STRATEGY
