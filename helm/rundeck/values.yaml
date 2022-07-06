@@ -38,12 +38,12 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 4441
+  type: LoadBalancer
+  port: 8045
   targetPort: 4440
 
 ingress:
-  enabled: true
+  enabled: false
   className: ""
   annotations: 
     kubernetes.io/ingress.class: nginx
@@ -67,10 +67,10 @@ resources:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     cpu: 200m
-    memory: 256Mi
+    memory: 2000Mi
   requests:
     cpu: 100m
-    memory: 128Mi
+    memory: 1500Mi
 
 autoscaling:
   enabled: false
