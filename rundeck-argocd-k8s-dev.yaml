@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rundeck-dev
+  namespace: argocd
+  labels:
+    Product: DevOps
+    ProductComponents: ArgoApplicationSet
+    Region: br
+    Environment: dev
+    kind: helm
+    type: declarative
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/dgolive/rundeck-helm.git
+    targetRevision: dev
+    path: helm/rundeck
+    helm:
+      releaseName: rundeck
+      parameters:
+      - name: clusterName
+        value: rundeck
+  destination:
+    server: https://kubernetes.default.svc
+    #namespace: rundeck
+ 
