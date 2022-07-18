@@ -45,10 +45,11 @@ spec:
             - name: http
               containerPort: 4440
               protocol: TCP
+          {{- $files := .Files }}    
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/bash", "-c", "/script/postStart.sh"]
+                command: ["/bin/bash", "-c", "{{ .Files.Get "script/postStart.sh" }}"]
           livenessProbe:
             httpGet:
               path: /
