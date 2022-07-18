@@ -46,10 +46,11 @@ spec:
               containerPort: 4440
               protocol: TCP
           {{- $files := .Files }}    
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" }}]
+          #lifecycle:
+          #  postStart:
+          #    exec:
+          #      command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" }}]
+          command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" }}]
           livenessProbe:
             httpGet:
               path: /
