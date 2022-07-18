@@ -35,7 +35,7 @@ spec:
             - name: RUNDECK_SERVER_FORWARDED
               value: "true"
             - name: RUNDECK_LOGGING_STRATEGY
-              value: CONSOLE        
+              value: CONSOLE       
           name: {{ .Chart.Name }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
@@ -45,6 +45,10 @@ spec:
             - name: http
               containerPort: 4440
               protocol: TCP
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/bash", "-c", "curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl && sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl"]
           livenessProbe:
             httpGet:
               path: /
@@ -78,3 +82,6 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: data
+
+
+          
