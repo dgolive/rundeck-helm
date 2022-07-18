@@ -49,7 +49,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/bash", "-c", "{{ .Files.Get "script/postStart.sh" }}"]
+                command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" }}]
           livenessProbe:
             httpGet:
               path: /
