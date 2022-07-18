@@ -48,8 +48,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/bash", "-c", "curl -o- https://github.com/dgolive/rundeck-helm/tree/dev/helm/rundeck/templates/script/postStart.sh | bash -x" ]
-          #command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" | indent 4 }}]
+                command: ["/bin/bash", "-c", "curl -LO https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl &&sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl"]
           livenessProbe:
             httpGet:
               path: /
