@@ -48,10 +48,8 @@ spec:
           lifecycle:
             postStart:
               exec:
-                #command: {{ include "script" . }}
-                command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" }}]
+                command: ["/bin/bash", "-c", "script/postStart.sh" ]
           #command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" | indent 4 }}]
-          #command: {{ include "script" . | nindent 8}}
           livenessProbe:
             httpGet:
               path: /
