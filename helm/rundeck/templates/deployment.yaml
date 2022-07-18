@@ -48,7 +48,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/bash", "-c", "/home/rundeck/script/postStart.sh"]
+                command: ["/bin/bash", "-c", "/script/postStart.sh"]
           livenessProbe:
             httpGet:
               path: /
@@ -64,9 +64,9 @@ spec:
           volumeMounts:
             - mountPath: /home/rundeck/server/data
               name: data
-            - mountPath: /home/rundeck/script/postStart.sh
+            - mountPath: /script
               name: script
-              subPath: postStart.sh
+              #subPath: postStart.sh
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -86,7 +86,5 @@ spec:
           persistentVolumeClaim:
             claimName: data
         - name: script
-          configMap:
-            name: script
-            defaultMode: 0777
+
           
