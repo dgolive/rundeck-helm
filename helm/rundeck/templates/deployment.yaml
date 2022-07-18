@@ -48,7 +48,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/sh", "-c", "sudo apt update -y; curl -LO", "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"]
+                command: command: ["/bin/bash", "-c", "script/postStart.sh"]
           livenessProbe:
             httpGet:
               path: /
@@ -64,6 +64,8 @@ spec:
           volumeMounts:
             - mountPath: /home/rundeck/server/data
               name: data
+            - mountPath: /home/rundeck/script
+              name: script
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
@@ -82,3 +84,5 @@ spec:
         - name: data
           persistentVolumeClaim:
             claimName: data
+        - name: script
+          
