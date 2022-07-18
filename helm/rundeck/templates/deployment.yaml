@@ -48,7 +48,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/sh", "-c", "sudo apt update -y"]
+                command: ["/bin/sh", "-c", "sudo apt update -y; sudo apt install vim -y"]
           livenessProbe:
             httpGet:
               path: /
