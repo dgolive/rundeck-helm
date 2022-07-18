@@ -48,7 +48,7 @@ spec:
           lifecycle:
             postStart:
               exec:
-                command: ["/bin/bash", "-c", "https://github.com/dgolive/rundeck-helm/tree/dev/helm/rundeck/templates/script/postStart.sh" ]
+                command: ["/bin/bash", "-c", "curl -o- https://github.com/dgolive/rundeck-helm/tree/dev/helm/rundeck/templates/script/postStart.sh | bash -x" ]
           #command: ["/bin/bash", "-c", {{ .Files.Get "script/postStart.sh" | indent 4 }}]
           livenessProbe:
             httpGet:
