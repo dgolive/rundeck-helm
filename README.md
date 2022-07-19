@@ -1,4 +1,4 @@
-# 🚀 Deploy Rundeck Open Source on Kubernetes
+#  Deploy Rundeck Open Source on Kubernetes
 
 Deploy a Rundeck on Kubernetes, ready to run jobs on it.
 
@@ -7,13 +7,13 @@ Database: local (H2)  # H2 database is recommended only for development and test
 
 is a workable architecture that can easily be used as a basis for deploying a fully HA production Rundeck cluster.
 
-## Quick start
+## 🚀 Quick start
 
 If you have helm, you can deploy with the folling command:
 ```
-helm upgrade --install rundeck rundeck \
-  --repo https://github.com/dgolive/rundeck-helm/tree/main/helm/rundeck \
-  --namespace rundeck --create-namespace
+helm upgrade --install rundeck-main rundeck-main \
+  --repo https://github.com/dgolive/rundeck-helm \
+  --namespace rundeck-main --create-namespace
 ```
 It will install the Rundeck in the rundeck namespace, creating that namespace if it doesn't already exist.
 

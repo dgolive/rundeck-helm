@@ -1,6 +1,7 @@
 apiVersion: v2
 name: rundeck
 description: A Helm chart for Kubernetes
+icon: https://www.rundeck.com/hubfs/Assets/website/rundeck-by-pagerduty.svg
 
 # A chart can be either an 'application' or a 'library' chart.
 #
