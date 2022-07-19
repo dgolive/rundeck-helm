@@ -13,8 +13,8 @@ Versions:
 
 *H2 database is recommended only for development and testing.
 
-<h5 align="right">.</h5>
-## 🏁 Quick start
+
+## Quick start 🏁
 
 Deploy with the following helm command:
 ```
@@ -23,8 +23,9 @@ helm upgrade --install rundeck rundeck \
   --namespace rundeck --create-namespace
 ```
 It will install the Rundeck in the rundeck namespace, creating that namespace if it doesn't already exist.
-<h5 align="right">.</h5>
-### 🚀Access Rundeck WebUI 
+
+
+## Access Rundeck 🚀 
 
 Open a web browser if your preference and try out:
 
@@ -34,16 +35,15 @@ http://localhost:4440
 Login: admin
 Password: admin
 ```
-<h5 align="right">.</h5>
+
 ## Uninstall
 
 ```
 helm uninstall -n rundeck rundeck
 ```
-<h5 align="right">.</h5>
-## ⛏️ References
 
 
+## References ⛏️
 - https://www.rundeck.com
 - https://docs.rundeck.com/docs/
 - https://github.com/rundeck/rundeck
