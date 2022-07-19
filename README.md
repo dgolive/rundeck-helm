@@ -1,23 +1,30 @@
-#  Deploy Rundeck Open Source on Kubernetes
+#  Deploy Rundeck on Kubernetes
 
-Deploy a Rundeck on Kubernetes, ready to run jobs on it.
+## About Rundeck
 
-Rundeck version: 4.3.1
-Database: local (H2)  # H2 database is recommended only for development and testing
+Rundeck is an open source automation service with a web console, command line tools and a WebAPI. It lets you easily run automation tasks across a set of nodes.
 
-is a workable architecture that can easily be used as a basis for deploying a fully HA production Rundeck cluster.
+This documentation describes how to deploy Rundeck Open Source on Kubernetes and ready to run jobs on it.
 
-## 🚀 Quick start
+Versions:
+- Rundeck version: 4.3.1
+- Database: H2 local
+- Kubernetes: 1.24
 
-If you have helm, you can deploy with the folling command:
+*H2 database is recommended only for development and testing.
+
+<h5 align="right">.</h5>
+## 🏁 Quick start
+
+Deploy with the following helm command:
 ```
-helm upgrade --install rundeck-main rundeck-main \
-  --repo https://github.com/dgolive/rundeck-helm \
-  --namespace rundeck-main --create-namespace
+helm upgrade --install rundeck rundeck \
+  --repo https://dgolive.github.io/rundeck-helm/ \
+  --namespace rundeck --create-namespace
 ```
 It will install the Rundeck in the rundeck namespace, creating that namespace if it doesn't already exist.
-
-### Access Rundeck WebUI 
+<h5 align="right">.</h5>
+### 🚀Access Rundeck WebUI 
 
 Open a web browser if your preference and try out:
 
@@ -27,8 +34,18 @@ http://localhost:4440
 Login: admin
 Password: admin
 ```
+<h5 align="right">.</h5>
 ## Uninstall
 
 ```
 helm uninstall -n rundeck rundeck
 ```
+<h5 align="right">.</h5>
+## ⛏️ References
+
+
+- https://www.rundeck.com
+- https://docs.rundeck.com/docs/
+- https://github.com/rundeck/rundeck
+- https://github.com/rundeck/docker-zoo/tree/master/kubernetes
+
