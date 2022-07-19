@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: https://github.com/dgolive/rundeck-helm.git
     targetRevision: dev
-    path: helm/rundeck
+    path: rundeck
     helm:
       releaseName: rundeck
       parameters:
