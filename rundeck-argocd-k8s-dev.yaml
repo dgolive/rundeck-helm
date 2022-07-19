@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: https://github.com/dgolive/rundeck-helm.git
     targetRevision: dev
-    path: rundeck
+    path: /
     helm:
       releaseName: rundeck
       parameters:
@@ -23,5 +23,5 @@ spec:
         value: rundeck
   destination:
     server: https://kubernetes.default.svc
-    #namespace: rundeck
+  
  
