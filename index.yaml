@@ -1,0 +1,15 @@
+apiVersion: v1
+entries:
+  rundeck:
+  - apiVersion: v2
+    appVersion: 4.3.1
+    created: "2022-07-19T17:37:13.429937915-03:00"
+    description: A Helm chart for Kubernetes
+    digest: 243a6d1616b34e9ee8bf25df4b027965b4aa878a3f00b709c7fd41c804df47e6
+    icon: https://www.rundeck.com/hubfs/Assets/website/rundeck-by-pagerduty.svg
+    name: rundeck
+    type: application
+    urls:
+    - https://github.com/dgolive/rundeck-helm/rundeck-0.4.0.tgz
+    version: 0.4.0
+generated: "2022-07-19T17:37:13.424231064-03:00"
