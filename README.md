@@ -1,6 +1,6 @@
-# <img width=30px height=20px src="rundeck_ico.png"> Deploy Rundeck on Kubernetes
+# Deploy Rundeck on Kubernetes
 
-## About Rundeck
+## <img width=20px height=15px src="rundeck_ico.png"> About Rundeck
 
 Rundeck is an open source automation service with a web console, command line tools and a WebAPI. It lets you easily run automation tasks across a set of nodes.
 
