@@ -1,4 +1,4 @@
-# <img width=30px height=20px src="rundeck_ico.png">  Deploy Rundeck on Kubernetes
+# <img width=30px height=20px class="benefitImg" id="iconPersonalizeProfile" src="rundeck_ico.png">  Deploy Rundeck on Kubernetes
 
 ## About Rundeck
 
