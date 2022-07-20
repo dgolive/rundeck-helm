@@ -1,10 +1,10 @@
-#  Deploy Rundeck on Kubernetes
+# <img width=30px height=20px src="rundeck_ico.png">  Deploy Rundeck on Kubernetes
 
 ## About Rundeck
 
 Rundeck is an open source automation service with a web console, command line tools and a WebAPI. It lets you easily run automation tasks across a set of nodes.
 
-This documentation describes how to deploy Rundeck Open Source on Kubernetes and ready to run jobs on it.
+This documentation describes how to deploy Rundeck Community Edition on Kubernetes and ready to run jobs on it.
 
 Versions:
 - Rundeck version: 4.3.1
@@ -13,8 +13,11 @@ Versions:
 
 *H2 database is recommended only for development and testing.
 
+## 💻 Requirements 
 
-## Quick start 🏁
+- [Helm](https://helm.sh/docs/intro/install/) 
+
+## 🏁 Quick start 
 
 Deploy with the following helm command:
 ```
@@ -25,7 +28,7 @@ helm upgrade --install rundeck rundeck \
 It will install the Rundeck in the rundeck namespace, creating that namespace if it doesn't already exist.
 
 
-## Access Rundeck 🚀 
+## 🚀 Access Rundeck  
 
 Open a web browser if your preference and try out:
 
@@ -36,14 +39,14 @@ Login: admin
 Password: admin
 ```
 
-## Uninstall
+## ⛏️ Uninstall
 
 ```
 helm uninstall -n rundeck rundeck
 ```
 
 
-## References ⛏️
+## 📝 References 
 - https://www.rundeck.com
 - https://docs.rundeck.com/docs/
 - https://github.com/rundeck/rundeck
